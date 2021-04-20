@@ -1,9 +1,5 @@
-/*
-=============== 
-Fonts
-===============
-*/
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*
 =============== 
@@ -44,13 +40,13 @@ Variables
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
-  --ff-primary: "Roboto", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
+  --font-primary: 'Montserrat', sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --grayscale-shadow:rgb(145 158 171 / 24%) 0px 0px 2px 0px, rgb(145 158 171 / 24%) 0px 16px 32px -4px;
   --max-width: 1170px;
   --fixed-width: 620px;
 }
@@ -68,7 +64,7 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: var(--ff-secondary);
+  font-family: var(--font-primary);
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -253,12 +249,31 @@ Modal
 
 .sectionCards{
   width: 100%;
+  height: 100%;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-column-gap: 24px;
+
   &_Article{
-    width: 33%;
+    width:100%;
+    color: rgb(33, 43, 54);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-image: none;
+    overflow: hidden;
+    box-shadow: var(--grayscale-shadow);
+    border-radius: 16px;
+    position: relative;
+    z-index: 0;
+    border-radius: 6px;
+    margin-bottom: 20px;
 }
 &_Img{
   display: block;
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+
 }
 &_Title{
   font-size: 20px;

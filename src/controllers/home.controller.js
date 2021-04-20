@@ -7,9 +7,9 @@ export default () => {
   const sectionsCards = divElement.querySelector(".sectionCards");
   const sectionsButtonsContainer = divElement.querySelector(".sectionButtons");
 
- /*  const modalBtn = divElement.querySelector(".modal-btn");
+  const modalBtn = divElement.querySelector(".modal-btn");
   const modal = divElement.querySelector(".modal-overlay");
-  const closeBtn = divElement.querySelector(".close-btn"); */
+  const closeBtn = divElement.querySelector(".close-btn"); 
 
 /*   function modalShowInfo(item){
    console.log("LISTA",item)
@@ -19,11 +19,9 @@ export default () => {
     
     /*   <article onclick=${modalShowInfo(item)}></article> */
       return `
-        <article>
-        <div >
-        <img src="${item.img}" alt=${item.title} class="photo" />
-            <h4>${item.title}</h4>
-        </div>
+        <article class="sectionCards_Article">
+        <img src="${item.img}" alt=${item.title} class="sectionCards_Img" />
+            <h4 class="sectionCards_Title">${item.title}</h4>
       </article>
           `;
         
@@ -41,7 +39,7 @@ export default () => {
         }
         return values;
       },
-      ["all"]
+      ["Todos"]
     );
 
     const selectCategoriesButtons = categories
@@ -62,7 +60,7 @@ export default () => {
             return menuItem;
           }
         });
-        if (category === "all") {
+        if (category === "Todos") {
           diplayMenuItems(menu);
         } else {
           diplayMenuItems(menuCategory);
@@ -70,9 +68,17 @@ export default () => {
       });
     });
   }
-  
+  //MODAL
+  let modalBasic=()=>{
+    modalBtn.addEventListener("click", function () {
+      modal.classList.add("open-modal");
+    });
+    closeBtn.addEventListener("click", function () {
+      modal.classList.remove("open-modal");
+    });
+  }
   diplayMenuItems(menu);
   displayMenuButtons();
- 
+  modalBasic()
   return divElement;
 };
