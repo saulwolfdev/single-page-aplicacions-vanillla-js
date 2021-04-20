@@ -20,8 +20,10 @@ export default () => {
     /*   <article onclick=${modalShowInfo(item)}></article> */
       return `
         <article class="sectionCards_Article">
-        <img src="${item.img}" alt=${item.title} class="sectionCards_Img" />
-            <h4 class="sectionCards_Title">${item.title}</h4>
+        <img src="${item.img}" alt=${item.title} class="sectionCards_Article_Img" />
+            <div class="sectionCards_Article_Container">
+            <h4 class="sectionCards_Article_Container_Title">${item.title}</h4>
+            </div>
       </article>
           `;
         
