@@ -1,16 +1,34 @@
 import view from '../view/home.html'
-import menuItems from "../mock/data";
+import menu from "../mock/data";
 export default () => {
   const divElement = document.createElement('div');
   divElement.innerHTML = view;
 
   const sectionsCards = divElement.querySelector(".sectionCards");
-   console.log("SECTIONS",sectionsCards);
-   
+  const sectionsButtons=divElement.querySelectorAll(".sectionButtons_Filter")
+
+  sectionsButtons.forEach(function(btn){
+    btn.addEventListener("click", function(e){
+      const category=e.currentTarget.dataset.id;
+      //console.log(category)
+      const menuCategory=menu.filter((menuItem)=>{
+        //console.log("CATEGORIAS",menuItem.category)
+        
+        if(menuItem.category===category){
+          return menuItem;
+        }
+      });
+      //console.log("NUEVO MENU",menuCategory)
+      if(category==="all"){
+        diplayMenuItems(menu);
+      }else{
+        diplayMenuItems(menuCategory);
+      }
+    });
+  });
+
    let diplayMenuItems=(menuItems)=>{
       let displayMenu = menuItems.map(function (item) {
-        // console.log(item);
-    
         return `<article class="menu-item">
               <img src="${item.img}" alt=${item.title} class="photo" />
               <div class="item-info">
@@ -24,11 +42,9 @@ export default () => {
               </div>
             </article>`;
       });
-      displayMenu = displayMenu.join("");
-      // console.log(displayMenu);
-    
+      displayMenu = displayMenu.join("");    
       sectionsCards.innerHTML = displayMenu;
     }
-    diplayMenuItems(menuItems);
+   diplayMenuItems(menu);
   return divElement;
 }
