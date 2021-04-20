@@ -5,15 +5,16 @@ export default () => {
   const divElement = document.createElement('div');
   divElement.innerHTML = view;
 
+  //displayMenuButtons();
+
   const sectionsCards = divElement.querySelector(".sectionCards");
   const sectionsButtonsContainer=divElement.querySelector(".sectionButtons");
   
    //CARDS
    let diplayMenuItems=(menuItems)=>{
       let displayMenu = menuItems.map(function (item) {
-        return `
-        <article>
-            <img src="${item.img}" alt=${item.title} class="photo" />
+        return `<article class="menu-item">
+              <img src="${item.img}" alt=${item.title} class="photo" />
               <div class="item-info">
                 <header>
                   <h4>${item.title}</h4>
@@ -23,8 +24,7 @@ export default () => {
                   ${item.desc}
                 </p>
               </div>
-            </article>
-          `;
+            </article>`;
       });
       displayMenu = displayMenu.join("");    
       sectionsCards.innerHTML = displayMenu;
@@ -32,23 +32,7 @@ export default () => {
 
   //BUTTONS
   function displayMenuButtons(){
-     
-    const categories=menu.reduce((values,item)=>{
-      if(!values.includes(item.category)){
-          values.push(item.category)
-      }
-      return values;
-    },["all"]
-    );
-  
-    const selectCategoriesButtons=categories
-    .map((category)=>{
-      return `<button class="sectionButtons_Filter" type="button"  data-id=${category}>${category}</button>`
-    })
-    .join("")
-    sectionsButtonsContainer.innerHTML=selectCategoriesButtons;
-    const sectionsButtons=divElement.querySelectorAll(".sectionButtons_Filter");
-    
+
     sectionsButtons.forEach(function(btn){
       btn.addEventListener("click", function(e){
         const category=e.currentTarget.dataset.id;
@@ -64,10 +48,27 @@ export default () => {
         }
       });
     });
+     
+    const categories=menu.reduce((values,item)=>{
+      if(!values.includes(item.category)){
+          values.push(item.category)
+      }
+      return values;
+    },["all"]
+    );
+  
+    const selectCategoriesButtons=categories
+    .map((category)=>{
+      return `<button class="sectionButtons_Filter" type="button"  data-id=${category}>${category}</button>`
+    })
+    .join("");
+    sectionsButtonsContainer.innerHTML=selectCategoriesButtons;
+    const sectionsButtons=divElement.querySelectorAll(".sectionButtons_Filter");
+  
   };
     
   diplayMenuItems(menu);
-  displayMenuButtons()
+  
   
   return divElement;
 }

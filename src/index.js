@@ -11,3 +11,7 @@ const init = () => {
 };
 
 window.addEventListener("load", init);
+
+/* window.addEventListener("DOMContentLoaded", function () {
+  init();
+}) */
