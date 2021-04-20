@@ -31,12 +31,6 @@ const menuItems = [
     },
     {
       id: 6,
-      title: "oreo dream",
-      category: "shakes",
-      img: "../assets/images/item-6.jpeg",
-    },
-    {
-      id: 7,
       title: "bacon overflow",
       category: "Títulos",
       img: "../assets/images/item-7.jpeg",
