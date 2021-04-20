@@ -10,16 +10,18 @@ export default () => {
   let diplayMenuItems = (menuItems) => {
     let displayMenu = menuItems.map(function (item) {
       return `
+            <div>
               <article class="sectionCards_Article">
               <img src="${item.img}" alt=${item.title} class="sectionCards_Article_Img" />
                   <div class="sectionCards_Article_Container">
                   <h4 class="sectionCards_Article_Container_Title">${item.title}</h4>
                   </div>
             </article>
+            </div>
                 `;
 
     });
-    /* displayModalItems(); */
+    
     displayMenu = displayMenu.join("")
     sectionsCards.innerHTML = displayMenu;
 
