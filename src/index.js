@@ -1,8 +1,13 @@
-import { saludar } from './js/componentes.js';
-import './styles.css';
+import { router } from "./router/index.routes";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./scss/main.scss";
 
+const init = () => {
+  router(window.location.hash);
 
-const nombre = 'Saul alejos garay';
+  window.addEventListener("hashchange", () => {
+    router(window.location.hash);
+  });
+};
 
-saludar( nombre );
+window.addEventListener("load", init);
