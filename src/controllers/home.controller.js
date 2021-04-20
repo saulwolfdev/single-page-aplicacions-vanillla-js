@@ -7,25 +7,22 @@ export default () => {
   const sectionsCards = divElement.querySelector(".sectionCards");
   const sectionsButtonsContainer = divElement.querySelector(".sectionButtons");
 
-  const modalBtn = divElement.querySelector(".modal-btn");
+ /*  const modalBtn = divElement.querySelector(".modal-btn");
   const modal = divElement.querySelector(".modal-overlay");
-  const closeBtn = divElement.querySelector(".close-btn");
+  const closeBtn = divElement.querySelector(".close-btn"); */
 
-  function modalShowInfo(item){
+/*   function modalShowInfo(item){
    console.log("LISTA",item)
-};
+}; */
   let diplayMenuItems = (menuItems) => {
     let displayMenu = menuItems.map(function (item) {
     
+    /*   <article onclick=${modalShowInfo(item)}></article> */
       return `
-        <article onclick=${modalShowInfo(item)}>
-        <div class="modalSection">
+        <article>
+        <div >
         <img src="${item.img}" alt=${item.title} class="photo" />
-        <div class="item-info">
-          <header>
             <h4>${item.title}</h4>
-          </header>
-        </div>
         </div>
       </article>
           `;
