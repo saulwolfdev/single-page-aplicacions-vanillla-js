@@ -36,8 +36,10 @@ export default () => {
         })
         //console.log(dataItemModal)
        modal.update(
-       `<h4>${dataModal[0].title}</h4>
+       `<div class="sectionModals_Content">
+       <h4>${dataModal[0].title}</h4>
        <button class="sectionModals_Modal_Button">Cerrar</button>
+       </>
        `
        )
       modal.show()
@@ -53,21 +55,24 @@ export default () => {
   function modalCreate() {
     const tmp = `
       <div class="sectionModals_Modal">
-        <div id="sectionModals_Modal_Content"></div>
+      <div class="sectionModals_Content"></div>
       </div>
+     
     `;
 
     divElement.querySelector('.sectionModals').innerHTML = tmp;
 
     return {
       update(dataModal) {
-        divElement.querySelector('#sectionModals_Modal_Content').innerHTML=dataModal;
+        divElement.querySelector('.sectionModals_Content').innerHTML=dataModal;
       },
       show() {
-        divElement.querySelector('.sectionModals_Modal').style.display = 'block';
+        const modalShowView=divElement.querySelector('.sectionModals_Modal');
+              modalShowView.classList.add("sectionModals_Modal--Show");
       },
       hidden() {
-        divElement.querySelector('.sectionModals_Modal').style.display = 'none';
+        const modalShowView=divElement.querySelector('.sectionModals_Modal');
+              modalShowView.classList.remove("sectionModals_Modal--Show");
       }
     }
   }
