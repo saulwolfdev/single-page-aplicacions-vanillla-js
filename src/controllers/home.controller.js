@@ -6,9 +6,11 @@ export default () => {
 
   divElement.innerHTML = view;
 
-  const modal = modalCreate();
+
   const sectionsCards = divElement.querySelector(".sectionCards");
   const sectionsButtonsContainer = divElement.querySelector(".sectionButtons");
+
+  const modal = modalCreate();
 
   let diplayMenuItems = (menuItems) => {
 
@@ -29,48 +31,43 @@ export default () => {
     .forEach((card) => {
       card.addEventListener('click', () => {
         const id  = card.id;
-        const data = menu.filter((item) => {
+        const dataModal = menu.filter((item) => {
           return item.id === parseInt(id)
         })
-        
-        console.log(data)
-
+        //console.log(dataItemModal)
        modal.update(
-       `<h4>${data[0].title}
-       <button class="buttonCloseModal">${data[0].title}</button>
-       </h4>`
+       `<h4>${dataModal[0].title}</h4>
+       <button class="sectionModals_Modal_Button">Cerrar</button>
+       `
        )
       modal.show()
-      divElement.querySelector(".buttonCloseModal").addEventListener("click",modal.hidden())
+     let buttonCloseModal=divElement.querySelector(".sectionModals_Modal_Button")
+         buttonCloseModal.addEventListener("click",function () {
+           modal.hidden()
+         })
+         
       })
     })
 
-
-        /////////////
   };
   function modalCreate() {
     const tmp = `
-    <div class="modal-overlay">
-      <div class="modal-container">
-        <h3>modal content</h3>
-        <button class="close-btn">CERRAR</button>
-    
-        <div id="modal-content"></div>
+      <div class="sectionModals_Modal">
+        <div id="sectionModals_Modal_Content"></div>
       </div>
-    </div>
     `;
 
     divElement.querySelector('.sectionModals').innerHTML = tmp;
 
     return {
-      update(data) {
-        divElement.querySelector('#modal-content').innerHTML=data;
+      update(dataModal) {
+        divElement.querySelector('#sectionModals_Modal_Content').innerHTML=dataModal;
       },
       show() {
-        divElement.querySelector('.modal-overlay').style.display = 'block';
+        divElement.querySelector('.sectionModals_Modal').style.display = 'block';
       },
       hidden() {
-        divElement.querySelector('.modal-overlay').style.display = 'none';
+        divElement.querySelector('.sectionModals_Modal').style.display = 'none';
       }
     }
   }

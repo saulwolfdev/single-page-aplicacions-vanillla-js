@@ -301,3 +301,24 @@ Modal
     }
 }
 }
+.sectionModals{
+  position: relative;
+  z-index: 10000;
+  &_Modal{
+    background: var(--clr-white);
+  border-radius: var(--radius);
+  width: 90vw;
+  height: 30vh;
+  max-width: var(--fixed-width);
+  text-align: center;
+/*   display: grid;
+  place-items: center; */
+  position: relative;
+    &_Button{
+      background-color:#224eec;
+      color:#fff;
+      border: 0;
+      padding: 8px 16px;
+    }
+  }
+}
