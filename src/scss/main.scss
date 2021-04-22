@@ -36,6 +36,7 @@
   --background-color: rgb(0 53 255 / 50%);
   --max-width: 1170px;
   --fixed-width: 620px;
+  --fixed-width-max: 900px;
 }
 
 *,
@@ -165,7 +166,7 @@ img {
     &_Img{
       width: 100%;
       object-fit: cover;
-      height: 150px;
+      height: 200px;
     
     }
     &_Container{
@@ -185,8 +186,8 @@ img {
       background: var(--clr-white);
       border-radius: var(--radius);
       width: 90vw;
-      height: 30vh;
-      max-width: var(--fixed-width);
+      height: 60vh;
+      max-width: var(--fixed-width-max);
       text-align: center;
       display: grid;
       place-items: center;
@@ -220,4 +221,62 @@ img {
 
   }
 
+}
+
+.sectionModals{
+  position: relative;
+  &_View{
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    position: relative;
+    display: grid;
+    grid-template-columns:70% 30%;
+    grid-template-areas:"images contents";
+    
+    &_Img{
+      width: 100%;
+      height:563px;
+      object-fit: cover;
+      display: block;
+      border-bottom-left-radius: 6px;
+      border-top-left-radius: 6px;
+      grid-area: images;
+    }
+    &_Contents{
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      grid-area: contents;
+    }
+    &_Download{
+      background-color:#224eec;
+      color:#fff;
+      border: 0;
+      padding: 8px 16px;
+      width: 100%;
+      border-radius: 6px;
+      &:hover{
+        background-color:#0037ff;
+      }
+    }
+    &_Cancel{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 50px;
+      cursor: pointer;
+      border: 1px solid #585858;
+      background: transparent;
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      &:hover{
+        border: 1px solid #ff0000;
+      }
+    }
+  }
 }

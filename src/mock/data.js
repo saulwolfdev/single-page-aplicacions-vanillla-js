@@ -2,7 +2,7 @@ const menuItems = [
     {
       id: 1,
       title: "buttermilk pancakes",
-      category: "Adradecimientos",
+      category: "Agradecimientos",
       img: "../assets/images/item-1.jpeg",
     },
     {
