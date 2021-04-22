@@ -119,9 +119,12 @@ export default () => {
         } else {
           diplayMenuItems(menuCategory);
         }
+
+
       });
     });
   }
+
 
   diplayMenuItems(menu);
   displayMenuButtons();

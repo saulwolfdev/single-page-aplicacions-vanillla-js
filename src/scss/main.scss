@@ -66,6 +66,51 @@ img {
   display: block;
 }
 
+.ContainerMain{
+  width: 100%;
+  height: calc(100% - 100px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:"main" 
+                      "footer";
+    &_Main{
+      width: 100%;
+      height: 100%;
+      grid-area: main;
+    }
+    &_Footer{
+      background-color:#224eec;
+      padding: 20px;
+      width: 100%;
+      &_Container{
+        max-width: 1093px;
+        background-color:#224eec;
+        color:#ffffff;
+        grid-area: footer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        margin: 0 auto;
+        &_Legacy{
+          font-size: 12px;
+          margin: 0;
+        }
+  
+        &_List{
+           font-size: 10px;
+           color:#fff;
+           display: flex;
+           align-items: center;
+           justify-content: flex-end;
+           &_Item{
+             margin: 0 8px;
+           }
+        }    
+      }
+     
+    }
+}
+
 .backgroundImage{
     width: 100%;
     height: 360px;
