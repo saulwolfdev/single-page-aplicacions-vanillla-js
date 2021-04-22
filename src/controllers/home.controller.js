@@ -18,9 +18,6 @@ export default () => {
       return `
               <article class="sectionCards_Article" id=${item.id}>
               <img src="${item.img}" alt=${item.title} class="sectionCards_Article_Img" />
-                  <div class="sectionCards_Article_Container">
-                  <h4 class="sectionCards_Article_Container_Title">${item.title}</h4>
-                  </div>
             </article>
                 `;
     });
@@ -36,10 +33,13 @@ export default () => {
         })
         //console.log(dataItemModal)
        modal.update(
-       `<div class="sectionModals_Content">
+       `<div class="sectionModals_View">
+       <img class="sectionModals_View_Img" src=${dataModal[0].img}/>
+       <div class="sectionModals_View_Contents">
        <h4>${dataModal[0].title}</h4>
        <button class="sectionModals_Modal_Button">Cerrar</button>
-       </>
+       </div>
+       </div>
        `
        )
       modal.show()
