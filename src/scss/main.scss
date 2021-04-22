@@ -236,29 +236,66 @@ img {
     
     &_Img{
       width: 100%;
-      height:563px;
+      //height:528px;
+      height: 100%;
       object-fit: cover;
       display: block;
       border-bottom-left-radius: 6px;
       border-top-left-radius: 6px;
       grid-area: images;
     }
+
     &_Contents{
       width: 100%;
       height: 100%;
       padding: 20px;
       grid-area: contents;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      grid-template-areas:"boxes" 
+                          "downloads";
+      &_Box{
+        text-align: left;
+        grid-area: boxes;
+        &_Title{
+          margin: 16px 0;
+          text-align: left;
+          font-size: 20px;
+          font-weight: 700;
+      }
+      &_Subtitle{
+            color: #818181;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 300;
+            margin-top: 20px;
+      }
+      &_Line{
+        width: 100%;
+        border-bottom: 1px solid #adadad;
+        margin: 60px 0;
+      }
+      }
+     
     }
     &_Download{
       background-color:#224eec;
       color:#fff;
       border: 0;
-      padding: 8px 16px;
       width: 100%;
       border-radius: 6px;
+      display: block;
+      font-size: 20px;
+      padding: 8px 16px;
+      text-decoration: none;
+      text-align: center;
       &:hover{
         background-color:#0037ff;
+        color:#fff;
+        text-decoration: none;
+        text-align: center;
       }
+      grid-area: downloads;
     }
     &_Cancel{
       width: 30px;

@@ -1,39 +1,45 @@
 const menuItems = [
     {
       id: 1,
-      title: "buttermilk pancakes",
+      title: "Agradecimientos",
       category: "Agradecimientos",
       img: "../assets/images/item-1.jpeg",
+      archive:"../assets/ppt/TemplateGracias.pptx"
     },
     {
       id: 2,
-      title: "diner double",
+      title: "Gráficos",
       category: "Gráficos",
       img: "../assets/images/item-2.jpeg",
+      archive:"../assets/ppt/TemplateGracias.pptx"
     },
     {
       id: 3,
-      title: "godzilla milkshake",
+      title: "Grillas",
       category: "Grillas",
-      img: "../assets/images/item-3.jpeg",
+      img: "../assets/images/item-7.jpeg",
+      archive:"../assets/ppt/TemplateGracias.pptx"
     },
     {
       id: 4,
-      title: "country delight",
+      title: "Presentaciones",
       category: "Presentaciones",
       img: "../assets/images/item-4.jpeg",
+      archive:"../assets/ppt/TemplateGracias.pptx"
     },
     {
       id: 5,
-      title: "egg attack",
+      title: "Portadas",
       category: "Portadas",
       img: "../assets/images/item-5.jpeg",
+      archive:"../assets/ppt/TemplateGracias.pptx"
     },
     {
       id: 6,
-      title: "bacon overflow",
+      title: "Títulos",
       category: "Títulos",
       img: "../assets/images/item-7.jpeg",
+      archive:"../assets/ppt/TemplateGracias.pptx"
     },
   ]
 export default menuItems;

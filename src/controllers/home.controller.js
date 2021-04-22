@@ -37,8 +37,12 @@ export default () => {
           <button class="sectionModals_View_Cancel">X</button>
           <img class="sectionModals_View_Img" src=${dataModal[0].img}/>
           <div class="sectionModals_View_Contents">
-          <h4>${dataModal[0].title}</h4>
-          <button class="sectionModals_View_Download">Descargar</button>
+          <div class="sectionModals_View_Contents_Box">
+              <h5 class="sectionModals_View_Contents_Box_Subtitle">Categoria</h5>
+              <h3 class="sectionModals_View_Contents_Box_Title">${dataModal[0].title}</h3>
+              <div class="sectionModals_View_Contents_Box_Line"></div>
+          </div>
+          <a  href=${dataModal[0].archive} class="sectionModals_View_Download">Descargar</a>
           </div>
          </div>
        `
@@ -48,10 +52,10 @@ export default () => {
       buttonCloseModal.addEventListener("click",function () {
         modal.hidden()
       })
-     let buttonDonwloadModal=divElement.querySelector(".sectionModals_View_Download")
+      let buttonDonwloadModal=divElement.querySelector(".sectionModals_View_Download")
          buttonDonwloadModal.addEventListener("click",function () {
            modal.hidden()
-         })
+         }) 
          
       })
     })
