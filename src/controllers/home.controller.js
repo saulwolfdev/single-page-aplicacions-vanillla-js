@@ -31,20 +31,25 @@ export default () => {
         const dataModal = menu.filter((item) => {
           return item.id === parseInt(id)
         })
-        //console.log(dataItemModal)
+
        modal.update(
        `<div class="sectionModals_View">
-       <img class="sectionModals_View_Img" src=${dataModal[0].img}/>
-       <div class="sectionModals_View_Contents">
-       <h4>${dataModal[0].title}</h4>
-       <button class="sectionModals_Modal_Button">Cerrar</button>
-       </div>
-       </div>
+          <button class="sectionModals_View_Cancel">X</button>
+          <img class="sectionModals_View_Img" src=${dataModal[0].img}/>
+          <div class="sectionModals_View_Contents">
+          <h4>${dataModal[0].title}</h4>
+          <button class="sectionModals_View_Download">Descargar</button>
+          </div>
+         </div>
        `
        )
       modal.show()
-     let buttonCloseModal=divElement.querySelector(".sectionModals_Modal_Button")
-         buttonCloseModal.addEventListener("click",function () {
+      let buttonCloseModal=divElement.querySelector(".sectionModals_View_Cancel")
+      buttonCloseModal.addEventListener("click",function () {
+        modal.hidden()
+      })
+     let buttonDonwloadModal=divElement.querySelector(".sectionModals_View_Download")
+         buttonDonwloadModal.addEventListener("click",function () {
            modal.hidden()
          })
          

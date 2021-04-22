@@ -226,15 +226,14 @@ img {
 .sectionModals{
   position: relative;
   &_View{
-    //padding: 20px;
     height: 100%;
     width: 100%;
     border-radius: 6px;
-    //border: 1px solid red;
+    position: relative;
     display: grid;
     grid-template-columns:70% 30%;
     grid-template-areas:"images contents";
-
+    
     &_Img{
       width: 100%;
       height:563px;
@@ -247,36 +246,37 @@ img {
     &_Contents{
       width: 100%;
       height: 100%;
-      border: 1px solid purple;
+      padding: 20px;
       grid-area: contents;
     }
+    &_Download{
+      background-color:#224eec;
+      color:#fff;
+      border: 0;
+      padding: 8px 16px;
+      width: 100%;
+      border-radius: 6px;
+      &:hover{
+        background-color:#0037ff;
+      }
+    }
+    &_Cancel{
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 50px;
+      cursor: pointer;
+      border: 1px solid #585858;
+      background: transparent;
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      &:hover{
+        border: 1px solid #ff0000;
+      }
+    }
   }
-/* &_Modal{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--background-color);
-  display: flex;
-  place-items: center;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  visibility: hidden;
-  z-index: -10;
-  &--Show{
-    visibility: visible;
-    z-index: 10000;
-    box-shadow: var(--black-shadow);
-  }
-  &_Button{
-    background-color:#224eec;
-    color:#fff;
-    border: 0;
-    padding: 8px 16px;
-  }
-
-} */
-
 }
