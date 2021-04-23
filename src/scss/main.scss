@@ -52,6 +52,22 @@ img {
   width: 100%;
   height: 100%;
   position: relative;
+  &_Container{
+    width: 100%;
+    position: absolute;
+    z-index: 300;
+    left: 0;
+    top: 0;
+    &_Content{
+      margin: 0 auto;
+      max-width: 1140px;
+      padding: 10px 0;
+      &_Img{
+        width: 10%;
+      }
+    }
+    
+  }
     &_Logotipo{
       position: absolute;
       z-index: 1000;
@@ -97,6 +113,7 @@ img {
        display: flex;
        align-items: center;
        justify-content: flex-end;
+       margin-bottom: 0;
        &_Item{
          margin: 0 8px;
          color: #fff!important;
