@@ -3,26 +3,7 @@
 
 :root {
 
-  /* primary/main color */
-  --clr-primary-5: #49a6e9;
-  /* lighter shades of primary color */
-  --clr-primary-6: hsl(205, 89%, 70%);
-  --clr-primary-7: hsl(205, 90%, 76%);
-  --clr-primary-8: hsl(205, 86%, 81%);
-  --clr-primary-9: hsl(205, 90%, 88%);
-  --clr-primary-10: hsl(205, 100%, 96%);
-  /* darkest grey - used for headings */
-  --clr-grey-1: hsl(209, 61%, 16%);
-  --clr-grey-2: hsl(211, 39%, 23%);
-  --clr-grey-3: hsl(209, 34%, 30%);
-  --clr-grey-4: hsl(209, 28%, 39%);
-  /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(209, 23%, 60%);
-  --clr-grey-7: hsl(211, 27%, 70%);
-  --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: hsl(210, 36%, 96%);
+
   --clr-white: #fff;
   --clr-black: #222;
   --font-primary: 'Montserrat', sans-serif;
@@ -45,6 +26,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 body {
   font-family: var(--font-primary);
@@ -59,61 +41,79 @@ ul {
 a {
   text-decoration: none;
 }
-img:not(.logo) {
-  width: 100%;
-}
+/* img:not(.logo) {
+width: 100%;
+} */
 img {
   display: block;
 }
 
-.ContainerMain{
+.Header{
   width: 100%;
-  height: calc(100% - 100px);
-  display: grid;
-  grid-template-rows: 1fr auto;
-  grid-template-areas:"main" 
-                      "footer";
-    &_Main{
-      width: 100%;
-      height: 100%;
-      grid-area: main;
+  height: 100%;
+  position: relative;
+    &_Logotipo{
+      position: absolute;
+      z-index: 1000;
+      left: 377px;
+       top: 14px;
+       &_Img{
+        width: 14%;
+       }
     }
-    &_Footer{
-      background-color:#224eec;
-      padding: 20px;
-      width: 100%;
-      &_Container{
-        max-width: 1093px;
-        background-color:#224eec;
-        color:#ffffff;
-        grid-area: footer;
-        display: flex;
-        align-items: center;
-        justify-content: space-between; 
-        margin: 0 auto;
-        &_Legacy{
-          font-size: 12px;
-          margin: 0;
-        }
+  }
   
-        &_List{
-           font-size: 10px;
-           color:#fff;
-           display: flex;
-           align-items: center;
-           justify-content: flex-end;
-           &_Item{
-             margin: 0 8px;
-           }
-        }    
-      }
-     
-    }
+.Main{
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 391px);
 }
+.Footer{
+  width: 100%;
+  height: 100%;
+  background-color:#224eec;
+  padding: 20px;
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
 
+  &_Container{
+    max-width: 1093px;
+    background-color:#224eec;
+    color:#ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin: 0 auto;
+
+    &_Legacy{
+      font-size: 12px;
+      margin: 0;
+    }
+
+    &_List{
+       font-size: 10px;
+       color:#fff;
+       display: flex;
+       align-items: center;
+       justify-content: flex-end;
+       &_Item{
+         margin: 0 8px;
+         color: #fff!important;
+         font-size: 14px;
+         a{
+          color: #fff!important;
+         }
+         a:hover{
+          color: #fff!important;
+         } 
+       }
+    }    
+  }
+}
 .backgroundImage{
     width: 100%;
-    height: 360px;
+    height: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,6 +123,15 @@ img {
     background-position: center center;
     background-size:cover;
     position: relative;
+    @media screen and (min-width: 600px) {
+      height: 260px;
+    }
+    @media screen and (min-width: 786px) {
+      height: 360px;
+    }
+    @media screen and (min-width: 1280px) {
+      height: 360px;
+    }
     &_Color{
       width: 100%;
       height: 100%;
@@ -132,7 +141,6 @@ img {
       background: var(--background-color);
     }
     &_Title{
-      //font-size: 24px;
       font-weight: 800;
       text-transform: uppercase;
       z-index: 100;
@@ -145,6 +153,16 @@ img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 0;
+  @media screen and (min-width: 600px) {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: 786px) {
+    margin-top: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 20px;
+  }
   &_Text{
     font-size: 24px;
     font-weight: 300;
@@ -163,12 +181,13 @@ img {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 6px;
-  .sectionButtons_Filter{
+  margin-bottom: 20px;
+  &_Filter{
     border: 0;
     padding: 8px 16px;
     border-radius: 6px;
     margin: 0 8px 8px;
+    background-color:#f5f5f5;
     &:hover{
       background-color: #e1e1e1;
       transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, 
@@ -281,7 +300,6 @@ img {
     
     &_Img{
       width: 100%;
-      //height:528px;
       height: 100%;
       object-fit: cover;
       display: block;
@@ -358,7 +376,11 @@ img {
       top: 12px;
       &:hover{
         border: 1px solid #ff0000;
+        i{
+          color:#ff0000;
+        }
       }
+
     }
   }
 }

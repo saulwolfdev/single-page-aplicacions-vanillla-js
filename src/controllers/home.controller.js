@@ -34,7 +34,7 @@ export default () => {
 
        modal.update(
        `<div class="sectionModals_View">
-          <button class="sectionModals_View_Cancel">X</button>
+          <button class="sectionModals_View_Cancel"><i class="fas fa-times"></i></button>
           <img class="sectionModals_View_Img" src=${dataModal[0].img}/>
           <div class="sectionModals_View_Contents">
           <div class="sectionModals_View_Contents_Box">
@@ -42,7 +42,7 @@ export default () => {
               <h3 class="sectionModals_View_Contents_Box_Title">${dataModal[0].title}</h3>
               <div class="sectionModals_View_Contents_Box_Line"></div>
           </div>
-          <a  href=${dataModal[0].archive} class="sectionModals_View_Download">Descargar</a>
+          <a  href=${dataModal[0].archive} class="sectionModals_View_Download"> <i class="fas fa-download" style="margin-right:8px"></i> Descargar</a>
           </div>
          </div>
        `
