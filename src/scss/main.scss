@@ -334,6 +334,9 @@ img {
       grid-template-rows: 1fr auto;
       grid-template-areas:"boxes" 
                           "downloads";
+      background-color:#fff;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
       &_Box{
         text-align: left;
         grid-area: boxes;
