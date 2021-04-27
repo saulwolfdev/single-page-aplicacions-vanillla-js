@@ -106,15 +106,22 @@ export default () => {
     sectionsButtonsContainer.innerHTML = selectCategoriesButtons;
     const sectionsButtons = divElement.querySelectorAll(".sectionButtons_Filter");
 
+
     sectionsButtons.forEach(function (btn) {
+      sectionsButtons[0].className = "sectionButtons_Filter active"
       btn.addEventListener("click", function (e) {
         const category = e.currentTarget.dataset.id;
-        const menuCategory = menu.filter((menuItem) => {
+        for (let i = 0; i < sectionsButtons.length; i++){
+          sectionsButtons[i].className = "sectionButtons_Filter"
+        }
+        const menuCategory = menu.filter((menuItem) => {  
           if (menuItem.category === category) {
+            sectionsButtons[menuItem.id].className = "sectionButtons_Filter active"
             return menuItem;
           }
         });
         if (category === "Todos") {
+          sectionsButtons[0].className = "sectionButtons_Filter active"
           diplayMenuItems(menu);
         } else {
           diplayMenuItems(menuCategory);
